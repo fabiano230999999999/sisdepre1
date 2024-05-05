@@ -15,6 +15,12 @@ namespace sisdepre.Controllers
 
         public IActionResult Index()
         {
+            //retornar datos a la vista
+            ViewData["Mensaje"] = "Hola Mundo";
+            ViewData["Fecha"] = DateTime.Now;
+            ViewData["Nombre"] = "Juan Perez";
+            ViewData["Edad"] = 25;
+
             return View();
         }
 
@@ -27,6 +33,11 @@ namespace sisdepre.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        public IActionResult Acerca()
+        {
+            return View();
         }
     }
 }
